@@ -17,7 +17,8 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 
 @Entity
-@Table(name="medicines_details")
+@Table(name="medicines_details",uniqueConstraints=
+@UniqueConstraint(columnNames={"med_name", "pharmacist_id"}))
 public class Medicine {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
