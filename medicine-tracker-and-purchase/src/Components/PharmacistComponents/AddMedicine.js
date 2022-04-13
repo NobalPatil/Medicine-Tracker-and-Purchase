@@ -45,7 +45,7 @@ export default function AddMedicine() {
             timer: 2000,
           }).then(() => (window.location.href = "/add-medicine"));
         } else
-          swal("Something went wrong", "Please try again!", "error", {
+         swal("", "You already added this medicine!", "error", {
             timer: 2000,
           });
       })
