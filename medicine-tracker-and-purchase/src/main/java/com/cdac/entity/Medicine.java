@@ -24,7 +24,7 @@ public class Medicine {
 	@Column(name="med_id")
 	private int medId;
 	
-	@Column(name="med_name",length = 40,nullable = false)
+	@Column(name="med_name",length = 40,unique = true,nullable = false)
 	private String medName;
 	
 	@Column(name="med_manufacturer",length = 40,nullable = false)
