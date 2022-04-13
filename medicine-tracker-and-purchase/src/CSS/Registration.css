@@ -1,0 +1,16 @@
+#sty{
+    font-size: 13px;
+    font-weight: bold;
+   
+  }
+  
+  
+  .form-control{
+    font-size: small;
+    font-weight: inherit;
+  }
+  
+  .col-sm-6 img{
+    width: auto;
+    height: auto;
+  }
