@@ -69,9 +69,14 @@ export default function CustomerRegistration() {
             }
           ).then(() => (window.location.href = "/login-page"));
         } else
-          swal("Error", "Something went wrong, please try again", "error", {
-            timer: 2000,
-          });
+           swal(
+            "Error",
+            "This Email Id or Mobile No. had been already registered",
+            "error",
+            {
+              timer: 2000,
+            }
+          );
       })
       .catch(() =>
         swal("Error", "Something went wrong, please try again", "error", {
