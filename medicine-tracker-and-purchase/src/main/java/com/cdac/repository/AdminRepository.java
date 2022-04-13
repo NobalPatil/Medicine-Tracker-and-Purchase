@@ -22,7 +22,7 @@ public class AdminRepository implements AdminRepositoryInterface{
 	}
 	
 	public List<EarningData> fetchEarningPerMonthByYear(int year) {	
-		return em.createQuery("select new com.cdac.dto.EarningData(monthname(ordr.orderDate),sum(ordr.orderPrice * 0.02)) from Order ordr where year(orderDate) = :y group by month(orderDate) order by month(orderDate)")
+		return em.createQuery("select new com.cdac.dto.EarningData(monthname(ordr.orderDate),sum(ordr.orderPrice * 0.1)) from Order ordr where year(orderDate) = :y group by month(orderDate) order by month(orderDate)")
 				.setParameter("y", year).getResultList();
 	}
 }
