@@ -28,8 +28,8 @@ export default function OrderMedicine() {
   const handleInput = (e) => {
     e.preventDefault();
 
-    if (orderQuantity <= 0) {
-      swal("error", "Please enter valid quantity", "error");
+     if (orderQuantity < 1 || orderQuantity > 10) {
+      swal("error", "Please enter quantity between 1 and 10", "error");
     } else if (
       deliveryType === "" ||
       (deliveryType === "Home Delivery" && deliveryAddress === "")
@@ -55,7 +55,7 @@ export default function OrderMedicine() {
         .post("http://localhost:8081/order-medicine", med)
         .then((res) => {
           if (Object.keys(res.data).length) {
-            swal("success", "Your order has been placed!", {
+            swal("success", "Your order has been placed!","success", {
               timer: 2000,
             }).then(() => (window.location.href = "/google-map"));
           } else
